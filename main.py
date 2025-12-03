@@ -18,7 +18,7 @@ def fetch_labor_laws():
     這裡以模擬邏輯為主，實際 URL 需依照勞動部當下改版狀況調整
     """
     # 這是勞動部最新消息的範例網址 (需根據實際狀況替換)
-    url = "https://www.mol.gov.tw/1607/1611/1612/" 
+    url = "https://www.mol.gov.tw/1607/1632/1633/lpsimplelist" 
     
     try:
         response = requests.get(url)
