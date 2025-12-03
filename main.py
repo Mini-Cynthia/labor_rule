@@ -11,7 +11,7 @@ OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 # 初始化 OpenAI
 client = OpenAI(api_key=OPENAI_API_KEY)
-
+print 
 def fetch_labor_laws():
     """
     範例：爬取勞動部「最新消息」或「法規異動」
@@ -81,6 +81,10 @@ def send_to_teams(summary, news_item):
     }
     
     headers = {'Content-Type': 'application/json'}
+    print "test teams"
+    print(f"payload: {data}") 
+    print(f"TEAMS_WEBHOOK_URL: {TEAMS_WEBHOOK_URL}") 
+    print requests.post(TEAMS_WEBHOOK_URL, data=json.dumps(payload), headers=headers)
     response = requests.post(TEAMS_WEBHOOK_URL, data=json.dumps(payload), headers=headers)
     
     if response.status_code == 200:
