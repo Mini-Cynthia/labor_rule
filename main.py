@@ -81,7 +81,7 @@ def send_to_teams(summary, news_item):
     }
     
     headers = {'Content-Type': 'application/json'}
-    print "test teams"
+    print ("test teams")
     print(f"payload: {data}") 
     print(f"TEAMS_WEBHOOK_URL: {TEAMS_WEBHOOK_URL}") 
     print requests.post(TEAMS_WEBHOOK_URL, data=json.dumps(payload), headers=headers)
