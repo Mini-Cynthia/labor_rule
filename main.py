@@ -84,9 +84,8 @@ def send_to_teams(summary, news_item):
     print ("test teams")
     print(f"payload: {data}") 
     print(f"TEAMS_WEBHOOK_URL: {TEAMS_WEBHOOK_URL}") 
-    print requests.post(TEAMS_WEBHOOK_URL, data=json.dumps(payload), headers=headers)
     response = requests.post(TEAMS_WEBHOOK_URL, data=json.dumps(payload), headers=headers)
-    
+    print(f"status code={response.status_code}")
     if response.status_code == 200:
         print("訊息發送成功")
     else:
